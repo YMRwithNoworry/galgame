@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://RecordSelect.gd" id="1"]
+
+[sub_resource type="SystemFont" id="FontTitle"]
+font_names = PackedStringArray("Noto Serif CJK SC", "思源宋体", "SimSun", "宋体")
+font_weight = 200
+font_style = 0
+antialiased = true
+
+[sub_resource type="SystemFont" id="FontSub"]
+font_names = PackedStringArray("Noto Sans CJK SC", "Microsoft YaHei UI", "微软雅黑", "Arial")
+font_weight = 300
+antialiased = true
+
+[node name="RecordSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 1)
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TopLine" type="ColorRect" parent="Content"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(0, 0, 0, 0.1)
+
+[node name="SpacerTop" type="Control" parent="Content"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontTitle")
+theme_override_colors/font_color = Color(0.05, 0.05, 0.05, 1)
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+text = "选择乐曲"
+
+[node name="Divider" type="HSeparator" parent="Content"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SpacerMid" type="Control" parent="Content"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="Subtitle" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontSub")
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+text = "SELECT A RECORD"
+
+[node name="SpacerLarge" type="Control" parent="Content"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="RecordContainer" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="SpacerBottom" type="Control" parent="Content"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(120, 36)
+theme_override_fonts/font = SubResource("FontSub")
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 13
+text = "返回"
+
+[node name="BottomLine" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.1)
